@@ -162,7 +162,7 @@ function findIndices(numberArray,numberCanAddTo)
 
                   let negativeNumberSum=negativeNumberArray.reduce((accumulator, i)=> accumulator + i, 0);
                   let positiveNumberCount= positiveNumberArray.length;
-                  
+
                   //console.log(negativeNumberSum);
                   //console.log(positiveNumberCount);
 
@@ -171,3 +171,49 @@ function findIndices(numberArray,numberCanAddTo)
 
                   let posCountNegSum=[positiveNumberCount,negativeNumberSum];
                   console.log(posCountNegSum);
+
+
+
+
+//////
+/////
+//////5.Create a method that accepts a string of space separated numbers and returns the highest and lowest number as a string
+//////a.Use case: “3 9 0 1 4 8 10 2”  “0 10”
+
+
+
+
+                   let stringOfSpaceSeparatedNumbers= "3 9 0 1 4 8 10 2"
+                   // first I need to turn the strings into numbers in an array and sort them
+                   //keep in mind that in the .split(" ") function, whatever is designated inside of the " " marks is the split, aka could be a space a number a comma ect. it will split when it sees it.
+                   // the opposite is true for .join(" ") what is between the commas will separate each part of an array that you join to a string.
+                   let stringNumberArray= stringOfSpaceSeparatedNumbers.split(" ").map(Number);
+                   console.log(stringNumberArray);
+
+
+
+                  // Next I need to sort the numbers
+                  // if you use the .sort() function without the comparitors it will sort alphabetically aka [1 10 2 22 3]
+                  // the comparitors are (a,b) and the a-b is the direction of comparison, aka ascending order
+                  // if b-a is used the order will be decending
+
+                    stringNumberArray.sort((a,b)=> a-b);
+                    console.log(stringNumberArray);
+
+
+                    // Now I can pull the first and last numbers out of the sorted array to give the arrays range. and return it as a string using .join() method
+
+                    let arrayFirstAndLast= [];
+                    arrayFirstAndLast.push(stringNumberArray[0]);
+                    arrayFirstAndLast.push(stringNumberArray.pop())
+                    console.log(arrayFirstAndLast);
+                    // here you have to convert the arrayfirstand last into a new variable.....i dont know why
+                    let arrayFirstAndLastString= arrayFirstAndLast.join(" ");
+                    console.log(arrayFirstAndLastString);
+                    
+                
+                    
+
+                   
+
+                   
