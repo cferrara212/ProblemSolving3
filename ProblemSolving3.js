@@ -117,25 +117,57 @@ function findIndices(numberArray,numberCanAddTo)
 
 
                     
-                    let numberSequence= [7,6,4,3,1,2];
-                    let isNumberSequencePossible= checkThisSequence(numberSequence);
-                    console.log(isNumberSequencePossible);
+                    // let numberSequence= [7,6,4,3,1,2];
+                    // let isNumberSequencePossible= checkThisSequence(numberSequence);
+                    // console.log(isNumberSequencePossible);
 
 
-                    function checkThisSequence(yourNumberSequence)
-                    {
-                        yourNumberSequence.sort()
-                        let isItPossible=true;
-                        if (isItPossible===true)
-                        {
-                        for(let i=1; i<yourNumberSequence.length; i++)
-                        {
-                             if(yourNumberSequence[i]-1 !== yourNumberSequence[i-1])
-                             {
-                                 isItPossible=false;
-                             }
-                        }
-                        }
-                        return isItPossible;
-                    }
+                    // function checkThisSequence(yourNumberSequence)
+                    // {
+                    //     yourNumberSequence.sort()
+                    //     let isItPossible=true;
+                    //     if (isItPossible===true)
+                    //     {
+                    //     for(let i=1; i<yourNumberSequence.length; i++)
+                    //     {
+                    //          if(yourNumberSequence[i]-1 !== yourNumberSequence[i-1])
+                    //          {
+                    //              isItPossible=false;
+                    //          }
+                    //     }
+                    //     }
+                    //     return isItPossible;
+                    // }
 
+
+
+
+//////
+//////
+//////4.Create a method that takes an array of positive and negative numbers. Return an array where the first element is the count of the positive numbers and the second element is the sum of negative numbers. 
+//////Use case: [7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21
+
+
+
+
+
+                  let arrayToCount = [7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21];
+
+                  ///easier to do the two functions by creating two new arrays then joining them after
+
+                  let negativeNumberArray=arrayToCount.filter(i=> i <0);
+                  let positiveNumberArray=arrayToCount.filter(i=> i>-1);
+
+                  /// now that we have two arrays, we need to add the negative numbers together.
+
+                  let negativeNumberSum=negativeNumberArray.reduce((accumulator, i)=> accumulator + i, 0);
+                  let positiveNumberCount= positiveNumberArray.length;
+                  
+                  //console.log(negativeNumberSum);
+                  //console.log(positiveNumberCount);
+
+
+                  ///the next step is to join these together in a single array
+
+                  let posCountNegSum=[positiveNumberCount,negativeNumberSum];
+                  console.log(posCountNegSum);
